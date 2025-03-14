@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .recipe { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; background: #f9f9f9; }
+        h2 { color: #444; }
+        strong { color: #222; }
+    </style>
+</head>
+<body>
+    <h2>Recipe Collection</h2>
+    <div id="recipes-container">Loading recipes...</div>
+
+    <script>
+        function loadXMLDoc(filename) {
+            return new Promise((resolve, reject) => {
+                let xhttp = new XMLHttpRequest();
+                xhttp.open("GET", filename, true);
+                xhttp.onreadystatechange = function () {
+                    if (xhttp.readyState === 4) {
+                        if (xhttp.status === 200) {
+                            resolve(xhttp.responseXML);
+                        } else {
+                            reject("Error loading " + filename);
+                        }
+                    }
+                };
+                xhttp.send();
+            });
+        }
+
+        async function applyXSLT() {
+            try {
+                let xml = await loadXMLDoc("recipes.xml");
+                let xsl = await loadXMLDoc("recipes.xsl");
+
+                if (window.ActiveXObject || "ActiveXObject" in window) { 
+                    let ex = xml.transformNode(xsl);
+                    document.getElementById("recipes-container").innerHTML = ex;
+                } else if (document.implementation && document.implementation.createDocument) {
+                    let xsltProcessor = new XSLTProcessor();
+                    xsltProcessor.importStylesheet(xsl);
+                    let resultDocument = xsltProcessor.transformToFragment(xml, document);
+                    document.getElementById("recipes-container").innerHTML = "";
+                    document.getElementById("recipes-container").appendChild(resultDocument);
+                } else {
+                    document.getElementById("recipes-container").innerHTML = "Your browser does not support XSLT.";
+                }
+            } catch (error) {
+                document.getElementById("recipes-container").innerHTML = error;
+            }
+        }
+
+        applyXSLT();
+    </script>
+</body>
+</html>

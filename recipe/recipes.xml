@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recipes>
+    <recipe id="1">
+        <recipeTitle>Moist Chocolate Cake</recipeTitle>
+        <ingredients>
+            <ingredient>2 cups flour</ingredient>
+            <ingredient>1 cup cocoa powder</ingredient>
+            <ingredient>2 cups sugar</ingredient>
+            <ingredient>1 tsp baking powder</ingredient>
+        </ingredients>
+        <cookingInstructions>
+            Preheat oven to 350°F. Mix all ingredients, pour into a pan, and bake for 30 minutes.
+        </cookingInstructions>
+    </recipe>
+
+    <recipe id="2">
+        <recipeTitle>Banana Bread</recipeTitle>
+        <ingredients>
+            <ingredient>2 ripe bananas</ingredient>
+            <ingredient>2 cups flour</ingredient>
+            <ingredient>1/2 cup sugar</ingredient>
+            <ingredient>1/2 cup butter</ingredient>
+        </ingredients>
+        <cookingInstructions>
+            Mash bananas, mix with ingredients, pour into a loaf pan, and bake at 350°F for 50 minutes.
+        </cookingInstructions>
+    </recipe>
+
+    <recipe id="3">
+        <recipeTitle>Pancakes</recipeTitle>
+        <ingredients>
+            <ingredient>1 1/2 cups flour</ingredient>
+            <ingredient>1 tbsp baking powder</ingredient>
+            <ingredient>1 cup milk</ingredient>
+            <ingredient>1 egg</ingredient>
+        </ingredients>
+        <cookingInstructions>
+            Mix ingredients, pour batter onto a hot pan, and cook until golden brown on both sides.
+        </cookingInstructions>
+    </recipe>
+
+    <recipe id="4">
+        <recipeTitle>Spaghetti</recipeTitle>
+        <ingredients>
+            <ingredient>200g spaghetti noodles</ingredient>
+            <ingredient>1 cup tomato sauce</ingredient>
+            <ingredient>1/2 cup ground beef</ingredient>
+            <ingredient>1/4 cup grated cheese</ingredient>
+        </ingredients>
+        <cookingInstructions>
+            Cook noodles, prepare sauce with beef and tomato sauce, mix together, and top with cheese.
+        </cookingInstructions>
+    </recipe>
+
+    <recipe id="5">
+        <recipeTitle>Mac and Cheese</recipeTitle>
+        <ingredients>
+            <ingredient>200g elbow macaroni</ingredient>
+            <ingredient>1 cup milk</ingredient>
+            <ingredient>1 1/2 cups cheddar cheese</ingredient>
+            <ingredient>1/2 cup butter</ingredient>
+        </ingredients>
+        <cookingInstructions>
+            Cook macaroni, prepare cheese sauce with milk and butter, mix together, and serve warm.
+        </cookingInstructions>
+    </recipe>
+</recipes>
+
